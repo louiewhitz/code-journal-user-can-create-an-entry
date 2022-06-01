@@ -1,4 +1,168 @@
-main {
-  background-color: aqua;
-  border: 1px solid brown;
+/* parent containers in order */
+
+body {
+  font-family: '          Proza Libre', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+head {
+  align-items: flex-start;
+  flex-direction: row;
+  color:#FFFFFF;
+  background-color: #562B81;
+  border: 1px solid #B6B6B6;
+
+}
+
+.h3 {
+  width: 710px;
+  height: 149px;
+  left: 365px;
+  top: 534px;
+  background: #562B81;
+  border: 1px solid #B6B6B6;
+  border-radius: 4px;
+}
+
+h1 {
+  font-family: 'Proza Libre', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 41px;
+  color: #292929;
+
+}
+
+.background {
+  background-color: #F0F0F0;
+  border-radius: 4px;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.dir-column {
+  flex-direction: column;
+}
+
+.col-direction {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/*
+#title {
+  width: 100%;
+} */
+
+#photo-url {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+form {
+  border-style: 1px solid black;
+}
+
+.view {
+  width: 100%;
+}
+
+.top-title {
+  align-items: flex-start;
+  flex-direction: row;
+  color: #FFFFFF;
+  background-color: #562B81;
+  border: 1px solid #B6B6B6;
+}
+
+.pdlr-10 {
+  padding: 0 10px
+}
+
+img {
+  width: 100%;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+.h1-box {
+  flex-direction: column;
+  border-width: 1px;
+  border-color: darkblue;
+}
+
+/*
+.view {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  padding: 1rem 2rem 2rem;
+  max-width: 560px;
+} */
+
+/* .mobile {
+  position: relative;
+  width: 375px;
+  height: 759px;
+  background: #F0F0F0;
+} */
+
+input {
+  width: 341px;
+  height: 40px;
+  left: 16px;
+  top: 426px;
+
+  background: #FFFFFF;
+  border: 1px solid #B6B6B6;
+  border-radius: 4px;
+}
+
+textarea {
+  width: 341px;
+  height: 149px;
+  left: 17px;
+  top: 623px;
+
+  background: #FFFFFF;
+  border: 1px solid #B6B6B6;
+  border-radius: 4px;
+}
+
+.button-class {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3px;
+}
+
+#button {
+  width: 20%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgb(150 66 233);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-radius: 5px;
+}
+
+#notes {
+  margin-left: 0px;
 }

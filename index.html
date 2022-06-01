@@ -18,14 +18,104 @@
 <body>
 
   <header>
+    <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <div class="top-title">
+            <h3>Code Journal</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <div class="top-title">
+            <h3>Code Journal</h3>
+          </div>
+        </div>
+      </div> -->
   </header>
   <main>
-    <div id="user" data-view="entry-form">
-      <form id="#journal">
-        <label for="new-entry-"">New</label>
-      </form>
+    <div class="container">
+      <div class="row pdlr-10">
+        <div class="column-full background">
+          <h1>New Entry</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row background">
+        <div class="column-half justify-center">
+          <img src="images/placeholder-image-square.jpg" id="url-placeholder">
+        </div>
+      </div>
+      <div class="column-full background">
+        <div class="column-half">
+          <div class="view" data-view="entry-form" id="entries">
+            <form id="formID">
+              <div class="row">
+                <div class="column-half">
+                  <h3><label for="title">Title</label></h3>
+                </div>
+                <div class="row">
+                  <input
+                    required
+                  type="text"
+                  name="title"
+                  class="input"
+                  id="title">
+                </div>
+
+              </div>
+          </div>
+          <h3><label for="photo-url">Photo URL</label></h3>
+        </div>
+        <div class="row">
+          <div class="column-half">
+            <input
+                required
+                type="text"
+                  name="photo-url"
+                  class="input"
+                  id="photo-url">
+          </div>
+        </div>
+        <div class="column-half">
+            <div class="row">
+
+
+              <h3><label for="Note">Note</label></h3>
+            </div>
+
+            <div class="row">
+
+
+                <textarea
+                required
+                name="note"
+                class="input"
+                rows="8"
+                id="notes"></textarea>
+              </div>
+
+
+              <div class="button-class row">
+                <input type="submit" value="SAVE" id="button">
+              </div>
+            </div>
+          </form>
+          </div>
+
+      </div>
+
+
+
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
+*
+                                                      muummmmmmmmm   j
