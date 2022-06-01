@@ -11,8 +11,7 @@ function changeUrl(event) {
   var userValue = event.target.value;
   $image.setAttribute('src', userValue);
 }
-
-$newImage.addEventListener('change', changeUrl);
+$newImage.addEventListener('input', changeUrl);
 
 function submitEvent(event) {
   event.preventDefault();
@@ -24,11 +23,18 @@ function submitEvent(event) {
     title: $title,
     photoUrl: $photo,
     notes: $note,
-    nextEntryId: data['nextEntryId']
+    nextEntry: data.nextEntryId
 
   };
-  data['entries'].push(obj);
-  data['nextEntryId'] += 1;
+  data.entries.push(obj);
+  data.nextEntryId += 1;
+  $formContainer.reset();
+  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+  localStorage.setItem('data', JSON.stringify(data));
+}
+
+function beforeUnload(event) {
   $formContainer.reset();
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
 
@@ -36,3 +42,4 @@ function submitEvent(event) {
 }
 
 $formContainer.addEventListener('submit', submitEvent);
+window.addEventListener('beforeunload', beforeUnload);
