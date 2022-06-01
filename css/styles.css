@@ -60,17 +60,6 @@ img {
   width: 100%;
 }
 
-.justify-center {
-  display: flex;
-  justify-content: center;
-}
-
-.h1-box {
-  flex-direction: column;
-  border-width: 1px;
-  border-color: darkblue;
-}
-
 input {
   height: 40px;
   left: 16px;
