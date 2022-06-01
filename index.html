@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Journal</title>
+  <link rel="icon" href="images/favicon.ico">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
+  <header>
+    <h3 class="top-title">Code Journal</h3>
+  </header>
+  <main class="container">
+    <div class="row">
+      <div class="column-full">
+        <h1>New Entry</h1>
+      </div>
+    </div>
+    <div class="view" data-view="entry-form" id="entries">
+      <form id="formID">
+        <div class="row">
+          <div class="column-half">
+            <img src="images/placeholder-image-square.jpg" id="url-placeholder">
+          </div>
+          <div class="column-half">
+
+
+            <h3><label for="title">Title</label></h3>
+            <input
+                  required
+                  type="text"
+                  name="title"
+                  class="input"
+                  id="title">
+            <h3><label for="photo-url">Photo URL</label></h3>
+            <input
+                required
+                type="text"
+                name="photo-url"
+                class="input"
+                id="photo-url">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <h3><label for="Note">Note</label></h3>
+          </div>
+          <textarea
+                required
+                name="note"
+                class="input column-full pdlr-10"
+                rows="8"
+                id="notes"></textarea>
+
+
+
+
+          <input type="submit" value="SAVE" id="button" class="button-class">
+        </div>
+      </form>
+    </div>
+
+
+
+
+
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
