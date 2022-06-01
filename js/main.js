@@ -3,23 +3,15 @@
 
 var $formContainer = document.querySelector('#formID');
 
-var $input = document.querySelector('.input');
-
 var $newImage = document.querySelector('.url');
 
 var $image = document.querySelector('#img');
-
-function handleInput(event) {
-  // eslint-disable-next-line no-console
-  console.log(event.target.value);
-}
 
 function changeUrl(event) {
   var userValue = event.target.value;
   $image.setAttribute('src', userValue);
 }
 
-$input.addEventListener('input', handleInput);
 $newImage.addEventListener('change', changeUrl);
 
 function submitEvent(event) {
