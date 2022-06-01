@@ -18,9 +18,11 @@
 <body>
 
   <header class="header">
-    <div class="row">
-      <div class="column-full">
-        <h3 class="top-title">Code Journal</h3>
+    <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <h3 class="top-title width">Code Journal</h3>
+        </div>
       </div>
     </div>
   </header>
@@ -43,25 +45,29 @@
                   required
                   type="text"
                   name="title"
-                  class="input"
+                  class="input width"
                   id="title">
+
+
             <h3><label for="photo-url">Photo URL</label></h3>
             <input
                 required
                 type="text"
                 name="photo-url"
-                class="url"
+                class="input width"
                 id="photo-url">
+
           </div>
         </div>
         <div class="row">
-          <div class="column-full">
+          <div class="column-full width">
             <h3><label for="note">Note</label></h3>
           </div>
+
           <textarea
                 required
                 name="note"
-                class="input column-full pdlr-20"
+                class="input margin-left width"
                 rows="8"
                 id="notes"></textarea>
 

@@ -15,6 +15,10 @@ h1 {
   color: #292929;
 }
 
+.width {
+  width: 100%;
+}
+
 header {
   background-color: #562b81;
 }
@@ -25,6 +29,10 @@ label {
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
+}
+
+.margin-left {
+  margin: 10px;
 }
 
 .background {
@@ -43,15 +51,9 @@ form {
   color: #fff;
   background-color: #562b81;
   text-align: center;
-  max-width: 850px;
   margin: auto;
   padding: 20px 10px;
   font-weight: 200;
-}
-
-.pdlr-20 {
-  padding: 0 10px;
-  margin-left: 10px;
 }
 
 img {
@@ -70,7 +72,6 @@ img {
 }
 
 input {
-  width: 341px;
   height: 40px;
   left: 16px;
   top: 426px;
@@ -80,10 +81,10 @@ input {
 }
 
 textarea {
-  width: 341px;
   height: 149px;
   left: 17px;
   top: 623px;
+  background: #fff;
   border: 1px solid #b6b6b6;
   border-radius: 4px;
 }
