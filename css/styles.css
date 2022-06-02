@@ -61,9 +61,7 @@ img {
 }
 
 input {
-  height: 40px;
-  left: 16px;
-  top: 426px;
+  padding: 10px 5px;
   background: #fff;
   border: 1px solid #b6b6b6;
   border-radius: 4px;
@@ -86,8 +84,6 @@ textarea {
 #button {
   width: 72px;
   height: 32px;
-  left: 1003px;
-  top: 706px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: none;
