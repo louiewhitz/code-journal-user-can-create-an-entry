@@ -30,16 +30,6 @@ function submitEvent(event) {
   data.nextEntryId += 1;
   $formContainer.reset();
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
-
-  localStorage.setItem('data', JSON.stringify(data));
-}
-
-function beforeUnload(event) {
-  $formContainer.reset();
-  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
-
-  localStorage.setItem('data', JSON.stringify(data));
 }
 
 $formContainer.addEventListener('submit', submitEvent);
-window.addEventListener('beforeunload', beforeUnload);
