@@ -23,7 +23,7 @@ function submitEvent(event) {
     title: $title,
     photoUrl: $photo,
     notes: $note,
-    nextEntry: data.nextEntryId
+    entryId: data.nextEntryId
 
   };
   data.entries.unshift(obj);
