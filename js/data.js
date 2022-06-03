@@ -7,7 +7,12 @@ var data = {
   nextEntryId: 1
 };
 
+// var $ul = document.querySelector('.ul-list');
+// for (var i = 0; i < data.length; i++) {
+// };
+
 function beforeUnload(event) {
   localStorage.setItem('data', JSON.stringify(data));
+
 }
 window.addEventListener('beforeunload', beforeUnload);

@@ -6,7 +6,9 @@ var $formContainer = document.querySelector('#formID');
 var $newImage = document.querySelector('.url');
 
 var $image = document.querySelector('#img');
-var entries = [];
+var entries = data.entries;
+
+// var $input = document.querySelector('.input');
 
 function changeUrl(event) {
   var userValue = event.target.value;
@@ -25,18 +27,54 @@ function submitEvent(event) {
     photoUrl: $photo,
     notes: $note,
     entryId: data.nextEntryId
-
   };
-  var ulList = document.createElement('ul-list');
-  // var list = data.createElement('.li');
-  for (var i = 0; i < entries.length; i++) {
-    ulList.prepend(entries[i]);
 
+  function renderEntry(obj) {
+    var $li = document.createElement('li');
+    // console.log('li', $li);
+    var $divRow = document.createElement('div');
+    $divRow.setAttribute('class', 'row');
+    // console.log('divRow:', $divRow);
+    var $colHalf = document.createElement('div');
+    $colHalf.setAttribute('class', 'column-half');
+    var $photo = document.createElement('img');// create img
+    $photo.setAttribute('class', 'object-fit'); // set attribute for img class
+    $photo.setAttribute('src', obj.photo); // set attributes for img
+    // this is where you append $colHalf
+    var $title = document.createElement('h3');
+    $title.textContent = obj.title;
+    var $note = document.createElement('p');
+    $note.textContent = obj.note;
+    $li.appendChild($divRow);
+    $divRow.appendChild($colHalf);
+    $colHalf.appendChild($photo);
+    $divRow.appendChild($colHalf);
+    $colHalf.appendChild($title);
+    $colHalf.appendChild($note);
+    return $li;
   }
-  data.entries.unshift(obj);
+
+  entries.unshift(obj);
+  var $ulList = document.querySelector('.ul-list');
+  for (var i = 0; i < entries.length; i++) {
+    obj = entries[i];
+    $ulList.prepend(obj);
+  }
+
   data.nextEntryId += 1;
   $formContainer.reset();
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  // function newFunc() {
+  var $journalEntries = document.querySelector('ul');
+  for (var j = 0; j < entries.length; j++) {
+    $journalEntries.appendChild(renderEntry(entries[j]));
+    // console.log(newFunc());
+  }
+  // }
+
+// console.log(newFunc);
 }
+
+// Window.addEventListener('DOMcontentLoaded', newFunc)
 
 $formContainer.addEventListener('submit', submitEvent);
