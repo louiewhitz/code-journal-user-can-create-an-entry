@@ -7,12 +7,35 @@ var data = {
   nextEntryId: 1
 };
 
-// var $ul = document.querySelector('.ul-list');
-// for (var i = 0; i < data.length; i++) {
-// };
+// var todos = [];
+// var previousTodosJSON = localStorage.getItem('entry-form');
+
+// function loadFunction(event) {
+//   // event.preventDefault();
+//   var todosJSON = JSON.stringify(todos);
+//   localStorage.setItem('data', todosJSON);
+//   if (previousTodosJSON !== null) {
+//     todos = JSON.parse(previousTodosJSON);
+//     console.log('page load');
+//   }
+// }
+var $loadInputs = [];
+var $previousInputs = localStorage.getItem('data');
+
+function loadFunction(event) {
+
+  var $inputsJSON = JSON.stringify($loadInputs);
+  localStorage.setItem('entry-storage', $inputsJSON);
+  if ($previousInputs !== null) {
+    $loadInputs = JSON.parse($previousInputs);
+    // console.log($loadInputs);
+    // console.log('the page has loaded!!');
+  }
+}
 
 function beforeUnload(event) {
-  localStorage.setItem('data', JSON.stringify(data));
-
+  localStorage.setItem('entry-storage', JSON.stringify(data));
+  // console.log(localStorage.setItem('entry-storage', JSON.stringify(data)));
 }
+window.addEventListener('onload', loadFunction);
 window.addEventListener('beforeunload', beforeUnload);

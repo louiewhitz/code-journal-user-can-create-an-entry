@@ -31,10 +31,7 @@ function submitEvent(event) {
   };
   entries.unshift(obj);
   var $ulList = document.querySelector('.ul-list');
-  for (var i = 0; i < entries.length; i++) {
-    obj = entries[i];
-    $ulList.prepend(renderEntry(obj));
-  }
+  $ulList.prepend(renderEntry(obj));
 
   data.nextEntryId += 1;
   $formContainer.reset();
@@ -70,22 +67,15 @@ function renderEntry(obj) {
   $columnHalf.appendChild($note);
   return $li;
 }
-
 function newFunc() {
-  // console.log(entries);
-  var parsed = JSON.parse(localStorage.getItem('data'));
-  // console.log(parsed);
+  var parsed = JSON.parse(localStorage.getItem('entry-storage'));
   var $ul = document.querySelector('ul');
   for (var j = 0; j < parsed.entries.length; j++) {
     var newE = renderEntry(parsed.entries[j]);
-    $ul.prepend(newE);
+    $ul.append(newE);
     // console.log(newE);
+    // console.log('dom loaded');
   }
-}
-
-function loadFunction(event) {
-  // console.log('the page has loaded!!');
 }
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
-window.addEventListener('load', loadFunction);
