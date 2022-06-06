@@ -68,7 +68,7 @@ function renderEntry(obj) {
 }
 function newFunc() {
   var parsed = JSON.parse(localStorage.getItem('entry-storage'));
-  var $ul = document.querySelector('ul');
+  var $ul = document.querySelector('.ul-list');
   for (var j = 0; j < parsed.entries.length; j++) {
     var newE = renderEntry(parsed.entries[j]);
     $ul.append(newE);
@@ -82,7 +82,7 @@ var view = document.querySelector('.view');
 // var entryPage = document.querySelector('#viewEntry');
 // var saveButton = document.querySelector('#savebutton');
 var buttonClass = document.querySelector('.button');
-// var newButton = document.querySelector('#newbutton');
+var newButton = document.querySelector('#newbutton');
 
 // function handleSaveClick(event) {
 //   if (!event.target.matches('.button')) {
@@ -137,4 +137,4 @@ function clickHandler(event) {
 buttonClass.addEventListener('click', clickHandler);
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
-// newButton.addEventListener('click', clickHandler);
+newButton.addEventListener('click', clickHandler);
