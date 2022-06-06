@@ -77,22 +77,64 @@ function newFunc() {
   }
 }
 
-// var view = document.querySelector('.view');
+var view = document.querySelector('.view');
+// var entryForm = document.querySelector('#entries');
+// var entryPage = document.querySelector('#viewEntry');
+// var saveButton = document.querySelector('#savebutton');
+var buttonClass = document.querySelector('.button');
+// var newButton = document.querySelector('#newbutton');
 
-// var saveButton = document.querySelectorAll('#button');
 // function handleSaveClick(event) {
-//   view.setAttribute('class', 'view');
+//   if (!event.target.matches('.button')) {
+//     return;
+//   }
+//   for (var i = 0; i < buttonClass.length; i++) {
+//     var buttonHidden = buttonClass[i];
+//     if (buttonHidden === event.target) {
+//       buttonHidden.className = 'button hidden';
+//     } else {
+//       buttonHidden = 'button';
+//     }
+
+//   }
+//   var viewDisplay = event.target.getAttribute('data-view');
+//   for (var j = 0; j < view.length; j++) {
+//     if (view[j].getAttribute('data-view') !== viewDisplay) {
+//       view[j].className = 'view hidden';
+//     } else {
+//       view[j].className = 'view';
+//     }
+
+//   }
 
 // }
-// saveButton.addEventListener('click', handleSaveClick);
 
+function clickHandler(event) {
+  if (!event.target.matches('.button')) {
+    return;
+  }
+  for (var i = 0; i < buttonClass.length; i++) {
+    var buttonHidden = buttonClass[i];
+    if (buttonHidden === event.target) {
+      buttonHidden.className = 'button hidden';
+    } else {
+      buttonHidden = 'button';
+    }
+
+  }
+  var viewDisplay = event.target.getAttribute('data-view');
+  for (var j = 0; j < view.length; j++) {
+    if (view[j].getAttribute('data-view') !== viewDisplay) {
+      view[j].className = 'view';
+    } else {
+      view[j].className = 'view hidden';
+    }
+
+  }
+
+}
+
+buttonClass.addEventListener('click', clickHandler);
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
-
-// var newEntriesPage = document.querySelector('entries');
-// var btnNew = document.querySelector('.btn-new');
-// btnNew.addEventListener('click', clickHandler);
-
-// function clickHandler(event) {
-//   view.setAttribute('class', 'view');
-// }
+// newButton.addEventListener('click', clickHandler);
