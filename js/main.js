@@ -54,7 +54,6 @@ function renderEntry(obj) {
   $photo.setAttribute('class', 'object-fit'); // set attribute for img class
   $photo.setAttribute('src', obj.photoUrl);
   $photo.textContent = obj.photo; // set attributes for img
-  // this is where you append $colHalf
   var $title = document.createElement('h3');
   $title.textContent = obj.title;
   var $note = document.createElement('p');
@@ -77,5 +76,23 @@ function newFunc() {
     // console.log('dom loaded');
   }
 }
+
+// var view = document.querySelector('.view');
+
+// var saveButton = document.querySelectorAll('#button');
+// function handleSaveClick(event) {
+//   view.setAttribute('class', 'view');
+
+// }
+// saveButton.addEventListener('click', handleSaveClick);
+
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
+
+// var newEntriesPage = document.querySelector('entries');
+// var btnNew = document.querySelector('.btn-new');
+// btnNew.addEventListener('click', clickHandler);
+
+// function clickHandler(event) {
+//   view.setAttribute('class', 'view');
+// }
