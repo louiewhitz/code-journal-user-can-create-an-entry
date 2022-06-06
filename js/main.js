@@ -134,7 +134,7 @@ function clickHandler(event) {
 
 }
 
-buttonClass.addEventListener('click', clickHandler);
+view.addEventListener('click', clickHandler); // use this to add event listener!
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
 newButton.addEventListener('click', clickHandler);
