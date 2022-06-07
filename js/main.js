@@ -68,7 +68,7 @@ function renderEntry(obj) {
 }
 function newFunc() {
   var parsed = JSON.parse(localStorage.getItem('entry-storage'));
-  var $ul = document.querySelector('ul');
+  var $ul = document.querySelector('.ul-list');
   for (var j = 0; j < parsed.entries.length; j++) {
     var newE = renderEntry(parsed.entries[j]);
     $ul.append(newE);
