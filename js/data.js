@@ -28,13 +28,17 @@ function loadFunction(event) {
   localStorage.setItem('entry-storage', $inputsJSON);
   if ($previousInputs !== null) {
     $loadInputs = JSON.parse($previousInputs);
-    // console.log($loadInputs);
-    // console.log('the page has loaded!!');
   }
 }
 
 function beforeUnload(event) {
   localStorage.setItem('entry-storage', JSON.stringify(data));
+  var entryForm = document.querySelector('#entryForm');
+  if (entryForm.className === 'view') {
+    localStorage.setItem('entryform', 'show');
+  } else {
+    localStorage.setItem('entryform', 'hidden');
+  }
   // console.log(localStorage.setItem('entry-storage', JSON.stringify(data)));
 }
 window.addEventListener('onload', loadFunction);

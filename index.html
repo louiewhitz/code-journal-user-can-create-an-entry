@@ -22,19 +22,20 @@
         <div class="column-full justify-align">
           <div class="top-title">
             <h2>Code Journal</h2>
-            <h3>Entries</h3>
+            <h3></h3>
           </div>
         </div>
       </div>
     </div>
   </header>
   <main class="container">
-    <div class="row">
-      <div class="column-full">
-        <h1>New Entry</h1>
+
+    <div class="view" data-view="entry-form" id="entryForm">
+      <div class="row">
+        <div class="column-full">
+          <h1>New Entry</h1>
+        </div>
       </div>
-    </div>
-    <div class="view" data-view="entry-form" id="entries">
       <form id="formID">
         <div class="row">
           <div class="column-half">
@@ -62,16 +63,17 @@
         </div>
       </form>
     </div>
-    <div class="view" id="viewEntry" data-view="entry-from">
+    <div class="view hidden" id="viewEntry" data-view="entries">
       <div class="row">
         <h1 class="padding-left">New Entries</h1>
         <input type="submit" class="button" name="new-entry" value="NEW" id="newbutton">
       </div>
-    </div>
-    <div class="row">
-      <ul class="ul-list">
-        
-      </ul>
+
+      <div class="row">
+        <ul class="ul-list">
+
+        </ul>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>

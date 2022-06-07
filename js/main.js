@@ -68,73 +68,67 @@ function renderEntry(obj) {
 }
 function newFunc() {
   var parsed = JSON.parse(localStorage.getItem('entry-storage'));
-  var $ul = document.querySelector('.ul-list');
+  var $ul = document.querySelector('ul');
   for (var j = 0; j < parsed.entries.length; j++) {
     var newE = renderEntry(parsed.entries[j]);
     $ul.append(newE);
-    // console.log(newE);
-    // console.log('dom loaded');
+  }
+  var entryForm = document.querySelector('#entryForm');
+  var entryView = localStorage.getItem('entryform');
+  var entriesView = document.querySelector('#viewEntry');
+  if (entryView === 'show') {
+    entryForm.className = 'view';
+    entriesView.className = 'view hidden';
+  } else {
+    entryForm.className = 'view hidden';
+    entriesView.className = 'view';
   }
 }
+var text = 'Entries';
+var headEntries = document.querySelector('h3');
+headEntries.setAttribute('class', 'view');
+headEntries.setAttribute('data-view', 'entries');
+headEntries.setAttribute('type', 'button');
+headEntries.textContent = text;
 
-var view = document.querySelector('.view');
-// var entryForm = document.querySelector('#entries');
-// var entryPage = document.querySelector('#viewEntry');
-// var saveButton = document.querySelector('#savebutton');
-var buttonClass = document.querySelector('.button');
+function headClick(event) {
+  // var entriesView = event.target.getAttribute('data-view');
+  // console.log(entriesView);
+
+  if (event.target && event.target.nodeName === 'H3') {
+    // console.log(entriesView);
+    var view = document.querySelector('#viewEntry');
+    // console.log(view);
+    view.className = 'view';
+    var form = document.querySelector('#entryForm');
+    form.className = 'view hidden';
+  }
+
+}
+
+function newButtonClick(event) {
+  var view = document.querySelector('#entryForm');
+  // console.log(view);
+  view.className = 'view';
+  var form = document.querySelector('#viewEntry');
+  form.className = 'view hidden';
+}
+function handleSaveClick(event) {
+  var view = document.querySelector('#viewEntry');
+  // console.log(view);
+  view.className = 'view';
+  var form = document.querySelector('#entryForm');
+  form.className = 'view hidden';
+
+}
+
 var newButton = document.querySelector('#newbutton');
+newButton.addEventListener('click', newButtonClick);
+headEntries.addEventListener('click', headClick);
 
-// function handleSaveClick(event) {
-//   if (!event.target.matches('.button')) {
-//     return;
-//   }
-//   for (var i = 0; i < buttonClass.length; i++) {
-//     var buttonHidden = buttonClass[i];
-//     if (buttonHidden === event.target) {
-//       buttonHidden.className = 'button hidden';
-//     } else {
-//       buttonHidden = 'button';
-//     }
-
-//   }
-//   var viewDisplay = event.target.getAttribute('data-view');
-//   for (var j = 0; j < view.length; j++) {
-//     if (view[j].getAttribute('data-view') !== viewDisplay) {
-//       view[j].className = 'view hidden';
-//     } else {
-//       view[j].className = 'view';
-//     }
-
-//   }
-
-// }
-
-function clickHandler(event) {
-  if (!event.target.matches('.button')) {
-    return;
-  }
-  for (var i = 0; i < buttonClass.length; i++) {
-    var buttonHidden = buttonClass[i];
-    if (buttonHidden === event.target) {
-      buttonHidden.className = 'button hidden';
-    } else {
-      buttonHidden = 'button';
-    }
-
-  }
-  var viewDisplay = event.target.getAttribute('data-view');
-  for (var j = 0; j < view.length; j++) {
-    if (view[j].getAttribute('data-view') !== viewDisplay) {
-      view[j].className = 'view';
-    } else {
-      view[j].className = 'view hidden';
-    }
-
-  }
-
-}
-
-view.addEventListener('click', clickHandler); // use this to add event listener!
+var saveButton = document.querySelector('#savebutton');
+saveButton.addEventListener('click', handleSaveClick);
+// view.addEventListener('click', clickHandler); // use this to add event listener!
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
-newButton.addEventListener('click', clickHandler);
+// newButton.addEventListener('click', clickHandler);
