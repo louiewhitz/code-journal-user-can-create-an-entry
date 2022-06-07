@@ -62,24 +62,12 @@ img {
   width: 100%;
 }
 
-.view-image-box {
-  display: flex;
-  object-fit: cover;
-}
-
 input {
   padding: 10px 5px;
   background: #fff;
   border: 1px solid #b6b6b6;
   border-radius: 4px;
 }
-
-/* .column-view {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-} */
 
 textarea {
   height: 149px;
