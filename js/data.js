@@ -7,18 +7,6 @@ var data = {
   nextEntryId: 1
 };
 
-// var todos = [];
-// var previousTodosJSON = localStorage.getItem('entry-form');
-
-// function loadFunction(event) {
-//   // event.preventDefault();
-//   var todosJSON = JSON.stringify(todos);
-//   localStorage.setItem('data', todosJSON);
-//   if (previousTodosJSON !== null) {
-//     todos = JSON.parse(previousTodosJSON);
-//     console.log('page load');
-//   }
-// }
 var $loadInputs = [];
 var $previousInputs = localStorage.getItem('data');
 
@@ -39,7 +27,6 @@ function beforeUnload(event) {
   } else {
     localStorage.setItem('entryform', 'hidden');
   }
-  // console.log(localStorage.setItem('entry-storage', JSON.stringify(data)));
 }
 window.addEventListener('onload', loadFunction);
 window.addEventListener('beforeunload', beforeUnload);

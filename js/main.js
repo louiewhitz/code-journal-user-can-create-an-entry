@@ -93,30 +93,23 @@ headEntries.setAttribute('type', 'button');
 headEntries.textContent = text;
 
 function headClick(event) {
-  // var entriesView = event.target.getAttribute('data-view');
-  // console.log(entriesView);
 
   if (event.target && event.target.nodeName === 'H3') {
-    // console.log(entriesView);
     var view = document.querySelector('#viewEntry');
-    // console.log(view);
     view.className = 'view';
     var form = document.querySelector('#entryForm');
     form.className = 'view hidden';
   }
-
 }
 
 function newButtonClick(event) {
   var view = document.querySelector('#entryForm');
-  // console.log(view);
   view.className = 'view';
   var form = document.querySelector('#viewEntry');
   form.className = 'view hidden';
 }
 function handleSaveClick(event) {
   var view = document.querySelector('#viewEntry');
-  // console.log(view);
   view.className = 'view';
   var form = document.querySelector('#entryForm');
   form.className = 'view hidden';
@@ -129,7 +122,5 @@ headEntries.addEventListener('click', headClick);
 
 var saveButton = document.querySelector('#savebutton');
 saveButton.addEventListener('click', handleSaveClick);
-// view.addEventListener('click', clickHandler); // use this to add event listener!
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
-// newButton.addEventListener('click', clickHandler);
