@@ -87,6 +87,7 @@ function newFunc() {
 var text = 'Entries';
 var headEntries = document.querySelector('h3');
 headEntries.setAttribute('class', 'view');
+headEntries.setAttribute('id', 'entrypage');
 headEntries.setAttribute('data-view', 'entries');
 headEntries.setAttribute('type', 'button');
 headEntries.textContent = text;

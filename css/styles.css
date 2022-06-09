@@ -140,7 +140,8 @@ textarea {
 
 h3 {
   padding-top: 5px;
-  margin-left: 24px;
+
+  /* margin-left: 24px; */
 }
 
 li {
@@ -157,4 +158,8 @@ p {
 
 .object-fit {
   object-fit: fill;
+}
+
+#entrypage {
+  margin-left: 24px;
 }
