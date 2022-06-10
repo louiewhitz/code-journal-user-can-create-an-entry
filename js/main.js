@@ -1,4 +1,3 @@
-/* eslint-disable dot-notation */
 /* global data */
 
 var $formContainer = document.querySelector('#formID');
@@ -49,10 +48,10 @@ function renderEntry(obj) {
   $colHalf.setAttribute('class', 'column-half');
   var $columnHalf = document.createElement('div');
   $columnHalf.setAttribute('class', 'column-half');
-  var $photo = document.createElement('img');// create img
-  $photo.setAttribute('class', 'object-fit'); // set attribute for img class
+  var $photo = document.createElement('img');
+  $photo.setAttribute('class', 'object-fit');
   $photo.setAttribute('src', obj.photoUrl);
-  $photo.textContent = obj.photo; // set attributes for img
+  $photo.textContent = obj.photo;
   var $title = document.createElement('h3');
   $title.textContent = obj.title;
   var $note = document.createElement('p');
@@ -60,7 +59,7 @@ function renderEntry(obj) {
   $li.appendChild($divRow);
   $divRow.appendChild($colHalf);
   $colHalf.appendChild($photo);
-  $divRow.appendChild($columnHalf); // deleted divrow here and wanted to see if cole half works
+  $divRow.appendChild($columnHalf);
   $columnHalf.appendChild($title);
   $columnHalf.appendChild($note);
   return $li;
@@ -107,22 +106,9 @@ function newButtonClick(event) {
 
   viewUpdate('entry-form');
 }
-// function handleSaveClick(event) {
-//   var view = data.view;
-//   if (view === 'entries') {
-//     $entriesContainer = 'view';
-//     $formEntryContainer.className = 'view hidden';
-//   } else if (view === 'form-entry') {
-//     $formEntryContainer = 'view';
-//     $entriesContainer.className = 'view hidden';
-//   }
-// }
 
 var newButton = document.querySelector('#newbutton');
 newButton.addEventListener('click', newButtonClick);
 headEntries.addEventListener('click', headClick);
-
-// var saveButton = document.querySelector('#savebutton');
-// saveButton.addEventListener('click', handleSaveClick);
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
