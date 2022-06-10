@@ -1,5 +1,3 @@
-/* parent containers in order */
-
 body {
   font-family: "Proza Libre", sans-serif;
   font-style: normal;
@@ -17,6 +15,11 @@ h1 {
 
 .width {
   width: 100%;
+}
+
+.justify-align {
+  display: flex;
+  justify-content: left;
 }
 
 header {
@@ -51,9 +54,7 @@ form {
   color: #fff;
   background-color: #562b81;
   text-align: center;
-  margin: auto;
-  padding: 20px 10px;
-  font-weight: 200;
+  margin-left: 5px;
 }
 
 img {
@@ -69,19 +70,16 @@ input {
 
 textarea {
   height: 149px;
-  left: 17px;
-  top: 623px;
   background: #fff;
   border: 1px solid #b6b6b6;
   border-radius: 4px;
 }
 
-.button-class {
-  margin-left: auto;
-  margin-top: 20px;
+.padding-left {
+  padding-left: 5px;
 }
 
-#button {
+.button {
   width: 72px;
   height: 32px;
   padding: 0.5rem 1rem;
@@ -93,4 +91,43 @@ textarea {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.15s ease;
+  margin-top: 20px;
+  margin-left: auto;
+  padding-left: 20px;
+}
+
+.ul-list {
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+h3 {
+  padding-top: 5px;
+}
+
+li {
+  width: 100%;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.object-fit {
+  object-fit: fill;
+}
+
+#entrypage {
+  margin-left: 24px;
+  margin-bottom: 25px;
 }
