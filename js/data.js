@@ -7,26 +7,16 @@ var data = {
   nextEntryId: 1
 };
 
-var $loadInputs = [];
-var $previousInputs = localStorage.getItem('data');
-
-function loadFunction(event) {
-
-  var $inputsJSON = JSON.stringify($loadInputs);
-  localStorage.setItem('entry-storage', $inputsJSON);
-  if ($previousInputs !== null) {
-    $loadInputs = JSON.parse($previousInputs);
-  }
-}
-
 function beforeUnload(event) {
-  localStorage.setItem('entry-storage', JSON.stringify(data));
-  var entryForm = document.querySelector('#entryForm');
-  if (entryForm.className === 'view') {
-    localStorage.setItem('entryform', 'show');
-  } else {
-    localStorage.setItem('entryform', 'hidden');
-  }
+  localStorage.setItem('data', JSON.stringify(data));
+
 }
-window.addEventListener('onload', loadFunction);
+
+var previousInputJSON = localStorage.getItem('data');
+
+if (previousInputJSON !== null) {
+
+  data = JSON.parse(previousInputJSON);
+}
+
 window.addEventListener('beforeunload', beforeUnload);

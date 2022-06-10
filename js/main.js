@@ -7,9 +7,8 @@ var $newImage = document.querySelector('.url');
 
 var $image = document.querySelector('#img');
 
-var entries = data.entries;
-
-// var $input = document.querySelector('.input');
+var $entriesContainer = document.querySelector('[data-view="entries"]');
+var $formEntryContainer = document.querySelector('[data-view="entry-form"]');
 
 function changeUrl(event) {
   var userValue = event.target.value;
@@ -18,6 +17,7 @@ function changeUrl(event) {
 $newImage.addEventListener('input', changeUrl);
 
 function submitEvent(event) {
+
   event.preventDefault();
   var $title = $formContainer.elements.title.value;
   var $photo = $formContainer.elements['photo-url'].value;
@@ -29,14 +29,13 @@ function submitEvent(event) {
     notes: $note,
     entryId: data.nextEntryId
   };
-  entries.unshift(obj);
-  var $ulList = document.querySelector('.ul-list');
-  $ulList.prepend(renderEntry(obj));
-
+  data.entries.unshift(obj);
   data.nextEntryId += 1;
+
+  viewUpdate('entries');
+
+  loadEntry(obj);
   $formContainer.reset();
-  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
-  localStorage.setItem('data', JSON.stringify(data)); // i set localstorage on subit, to see what it does
 
 }
 
@@ -66,61 +65,64 @@ function renderEntry(obj) {
   $columnHalf.appendChild($note);
   return $li;
 }
+function loadEntry(obj) {
+  var newEntry = renderEntry(obj);
+  var $ulList = document.querySelector('.ul-list');
+  $ulList.prepend(renderEntry(newEntry));
+}
+
 function newFunc() {
-  var parsed = JSON.parse(localStorage.getItem('entry-storage'));
+  viewUpdate(data.view);
+  var parsed = JSON.parse(localStorage.getItem('data'));
   var $ul = document.querySelector('.ul-list');
   for (var j = 0; j < parsed.entries.length; j++) {
     var newE = renderEntry(parsed.entries[j]);
     $ul.append(newE);
   }
-  var entryForm = document.querySelector('#entryForm');
-  var entryView = localStorage.getItem('entryform');
-  var entriesView = document.querySelector('#viewEntry');
-  if (entryView === 'show') {
-    entryForm.className = 'view';
-    entriesView.className = 'view hidden';
-  } else {
-    entryForm.className = 'view hidden';
-    entriesView.className = 'view';
+
+}
+
+function viewUpdate(view) {
+  data.view = view;
+
+  if (view === 'entries') {
+    $entriesContainer.className = 'view';
+    $formEntryContainer.className = 'view hidden';
+  } else if (view === 'entry-form') {
+    $formEntryContainer.className = 'view';
+    $entriesContainer.className = 'view hidden';
   }
 }
-var text = 'Entries';
-var headEntries = document.querySelector('h3');
-headEntries.setAttribute('class', 'view');
-headEntries.setAttribute('id', 'entrypage');
-headEntries.setAttribute('data-view', 'entries');
-headEntries.setAttribute('type', 'button');
-headEntries.textContent = text;
+
+var headEntries = document.querySelector('#entrypage');
 
 function headClick(event) {
 
-  if (event.target && event.target.nodeName === 'H3') {
-    var view = document.querySelector('#viewEntry');
-    view.className = 'view';
-    var form = document.querySelector('#entryForm');
-    form.className = 'view hidden';
-  }
+  viewUpdate('entries');
+
 }
 
 function newButtonClick(event) {
-  var view = document.querySelector('#entryForm');
-  view.className = 'view';
-  var form = document.querySelector('#viewEntry');
-  form.className = 'view hidden';
-}
-function handleSaveClick(event) {
-  var view = document.querySelector('#viewEntry');
-  view.className = 'view';
-  var form = document.querySelector('#entryForm');
-  form.className = 'view hidden';
+  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
 
+  viewUpdate('entry-form');
 }
+// function handleSaveClick(event) {
+//   var view = data.view;
+//   if (view === 'entries') {
+//     $entriesContainer = 'view';
+//     $formEntryContainer.className = 'view hidden';
+//   } else if (view === 'form-entry') {
+//     $formEntryContainer = 'view';
+//     $entriesContainer.className = 'view hidden';
+//   }
+// }
 
 var newButton = document.querySelector('#newbutton');
 newButton.addEventListener('click', newButtonClick);
 headEntries.addEventListener('click', headClick);
 
-var saveButton = document.querySelector('#savebutton');
-saveButton.addEventListener('click', handleSaveClick);
+// var saveButton = document.querySelector('#savebutton');
+// saveButton.addEventListener('click', handleSaveClick);
 window.addEventListener('DOMContentLoaded', newFunc);
 $formContainer.addEventListener('submit', submitEvent);
